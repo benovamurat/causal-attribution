@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "causal-attribution"
+version = "0.1.0"
+description = "Causal DAG-based multi-touch attribution versus heuristic baselines, demonstrated on synthetic data with known ground truth."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Murat Ova", email = "murat@productphilosophy.com" },
+]
+keywords = [
+    "marketing-attribution",
+    "causal-inference",
+    "multi-touch-attribution",
+    "dowhy",
+    "econml",
+    "dag",
+    "markov-chain",
+    "shapley",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "networkx>=3.0",
+    "dowhy>=0.11",
+    "econml>=0.15",
+    "matplotlib>=3.7",
+    "scikit-learn>=1.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+]
+
+[project.urls]
+Homepage = "https://productphilosophy.com/articles/multi-touch-attribution-causal-inference-dag"
+Repository = "https://github.com/benovamurat/causal-attribution"
+Article = "https://productphilosophy.com/articles/multi-touch-attribution-causal-inference-dag"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-q"
